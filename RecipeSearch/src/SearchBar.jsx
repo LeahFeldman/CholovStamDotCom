@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./index.css";
 
 function SearchBar(){
     const [query, setQuery] = useState("");
@@ -20,6 +21,10 @@ function SearchBar(){
         console.log('Submitted query:', query);
     }
 
+        console.log('Submitted query:', query);
+    };
+
+   
     return(
         <>
             <form onSubmit={handleSubmit}>
@@ -29,6 +34,13 @@ function SearchBar(){
                     name="searchInput" 
                     value={query} 
                     placeholder="search a recipe..."/>
+                <input type="text" 
+                required
+                placeholder="search a recipe..."
+                value= {query}
+                onChange={(e) => setQuery(e.target.value)}
+                />
+                <button type="submit">Search</button>
             </form>
 
             <ul>
@@ -41,6 +53,7 @@ function SearchBar(){
                     <Result key={item.idMeal} item={item}/>
                 ))}
             </ul>
+            {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
         </>
     );
 }
