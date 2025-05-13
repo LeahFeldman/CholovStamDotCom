@@ -1,3 +1,5 @@
+import React from 'react';
+import Result from './Result';
 import { useState, useEffect } from 'react';
 
 function SearchBar(){
@@ -25,7 +27,7 @@ function SearchBar(){
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
-                    required= {true} 
+                    required
                     name="searchInput" 
                     value={query} 
                     placeholder="search a recipe..."/>

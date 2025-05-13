@@ -1,5 +1,9 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import Title from './Title';
+import SearchBar from './SearchBar';
+import './App.css';
+import { useState } from 'react';
+
 
 function App() {
   return (
