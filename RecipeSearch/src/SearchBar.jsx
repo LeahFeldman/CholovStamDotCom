@@ -2,6 +2,7 @@ import React from 'react';
 import Result from './Result';
 import styles from './SearchBar.module.css';
 import { useState, useEffect } from 'react';
+import "./index.css";
 
 function SearchBar(){
     const [query, setQuery] = useState("");
@@ -23,20 +24,21 @@ function SearchBar(){
         console.log('Submitted query:', query);
     }
 
+   
     return(
-        <div className={styles.container}>
-            <div className={styles.searchBar}>
+        <div className={ styles.container }>
+            <div className={ styles.searchBar }>
                 <form onSubmit={handleSubmit}>
-                    <input 
-                        className={styles.input}
-                        type="text" 
-                        required
-                        name="searchInput" 
-                        value={query} 
-                        placeholder="search a recipe..."/>
+                    <input type="text" 
+                    required
+                    placeholder="search a recipe..."
+                    value= {query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className={ styles.input }
+                    />
 
                     //This hidden button allows the user to submit query by pressing "Enter"
-                    <button type="submit" style="display: none;"></button>
+                        <button type="submit" style="display: none;"></button>
                 </form>
 
                 <ul>
@@ -49,8 +51,10 @@ function SearchBar(){
                         <Result key={item.idMeal} item={item}/>
                     ))}
                 </ul>
+                {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
             </div>
         </div>
+
     );
 }
 
