@@ -24,42 +24,36 @@ function SearchBar(){
         console.log('Submitted query:', query);
     }
 
-        console.log('Submitted query:', query);
-    };
-
    
     return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    required= {true} 
-                    name="searchInput" 
-                    value={query} 
-                    placeholder="search a recipe..."/>
-                <input type="text" 
-                required
-                placeholder="search a recipe..."
-                value= {query}
-                onChange={(e) => setQuery(e.target.value)}
-                />
+        <div className={ styles.container }>
+            <div className={ styles.searchBar }>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" 
+                    required
+                    placeholder="search a recipe..."
+                    value= {query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className={ styles.input }
+                    />
 
-                //This hidden button allows the user to submit query by pressing "Enter"
-                    <button type="submit" style="display: none;"></button>
-            </form>
+                    //This hidden button allows the user to submit query by pressing "Enter"
+                        <button type="submit" style="display: none;"></button>
+                </form>
 
-            <ul>
-                {data
+                <ul>
+                    {data
 
-                    //data is left with meals that match the query
-                    .filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
+                        //data is left with meals that match the query
+                        .filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
 
-                    .map(item => (
-                    <Result key={item.idMeal} item={item}/>
-                ))}
-            </ul>
-            {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
-        </>
+                        .map(item => (
+                        <Result key={item.idMeal} item={item}/>
+                    ))}
+                </ul>
+                {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
+            </div>
+        </div>
 
     );
 }

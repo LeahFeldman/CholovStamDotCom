@@ -12,15 +12,16 @@ import './App.css';
 import { useState } from 'react';
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <SearchBar/>
       <Routes>
         <Route path="/" element={<SideBar />}>
           <Route index element={<Home />} />
-          <Route path="Details" element={<Details />} />
+          <Route path="Details/:id" element={<Details />} />
           <Route path="AboutUs" element={<AboutUs />} />
-          <Route path="*" element={} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -29,3 +30,8 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+
+
+
+
+
