@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from './Result';
+import styles from './SearchBar.module.css';
 import { useState, useEffect } from 'react';
 
 function SearchBar(){
@@ -23,30 +24,33 @@ function SearchBar(){
     }
 
     return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    required
-                    name="searchInput" 
-                    value={query} 
-                    placeholder="search a recipe..."/>
+        <div className={styles.container}>
+            <div className={styles.searchBar}>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                        className={styles.input}
+                        type="text" 
+                        required
+                        name="searchInput" 
+                        value={query} 
+                        placeholder="search a recipe..."/>
 
-                //This hidden button allows the user to submit query by pressing "Enter"
-                <button type="submit" style="display: none;"></button>
-            </form>
+                    //This hidden button allows the user to submit query by pressing "Enter"
+                    <button type="submit" style="display: none;"></button>
+                </form>
 
-            <ul>
-                {data
+                <ul>
+                    {data
 
-                    //data is left with meals that match the query
-                    .filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
+                        //data is left with meals that match the query
+                        .filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
 
-                    .map(item => (
-                    <Result key={item.idMeal} item={item}/>
-                ))}
-            </ul>
-        </>
+                        .map(item => (
+                        <Result key={item.idMeal} item={item}/>
+                    ))}
+                </ul>
+            </div>
+        </div>
     );
 }
 
