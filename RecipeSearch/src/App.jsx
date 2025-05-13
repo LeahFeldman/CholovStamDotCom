@@ -19,7 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<SideBar />}>
           <Route index element={<Home />} />
-          <Route path="Details" element={<Details />} />
+          <Route path="Details/:id" element={<Details />} />
           <Route path="AboutUs" element={<AboutUs />} />
           <Route path="*" element={<NotFound />} />
         </Route>
