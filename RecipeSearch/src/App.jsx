@@ -6,6 +6,10 @@ import AboutUs from "./pages/AboutUs";
 import SearchBar from "./SearchBar";
 import SideBar from "./pages/SideBar"; // Assuming SideBar is in the components folder
 import "./index.css";
+import React from 'react';
+import Title from './Title';
+import './App.css';
+import { useState } from 'react';
 
 export default function App() {
   return (
@@ -16,6 +20,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="Details" element={<Details />} />
           <Route path="AboutUs" element={<AboutUs />} />
+          <Route path="*" element={} />
         </Route>
       </Routes>
     </BrowserRouter>

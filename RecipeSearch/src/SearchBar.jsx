@@ -1,3 +1,6 @@
+import React from 'react';
+import Result from './Result';
+import styles from './SearchBar.module.css';
 import { useState, useEffect } from 'react';
 import "./index.css";
 
@@ -40,7 +43,9 @@ function SearchBar(){
                 value= {query}
                 onChange={(e) => setQuery(e.target.value)}
                 />
-                <button type="submit">Search</button>
+
+                //This hidden button allows the user to submit query by pressing "Enter"
+                    <button type="submit" style="display: none;"></button>
             </form>
 
             <ul>
@@ -55,6 +60,7 @@ function SearchBar(){
             </ul>
             {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
         </>
+
     );
 }
 
