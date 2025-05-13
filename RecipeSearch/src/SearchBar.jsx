@@ -31,6 +31,9 @@ function SearchBar(){
                     name="searchInput" 
                     value={query} 
                     placeholder="search a recipe..."/>
+
+                //This hidden button allows the user to submit query by pressing "Enter"
+                <button type="submit" style="display: none;"></button>
             </form>
 
             <ul>
