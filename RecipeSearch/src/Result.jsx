@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from 'Result.module.css';
+import styles from './Result.module.css';
 
 
 function Result({ item }){
