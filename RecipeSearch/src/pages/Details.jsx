@@ -5,6 +5,7 @@ import Title from './Title';
 const Details = () => {
   const { id } =useParams();
   const [meal, setMeal] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
  
   useEffect(() => {
     const fetchMealDetails=async () => {
