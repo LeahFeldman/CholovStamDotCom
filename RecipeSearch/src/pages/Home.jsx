@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import Title from "../Title";
 export function Home() {
   return (
   <>
-   <h1>Home</h1>
+   <Title>Home</Title>
     <Link to = "/AboutUs"> About Us </Link>
   </>
   )

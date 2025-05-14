@@ -1,3 +1,6 @@
+import Title from "../Title";
+import { NavLink } from "react-router-dom";
+
 const AboutUs = () => {
   return (
     <>

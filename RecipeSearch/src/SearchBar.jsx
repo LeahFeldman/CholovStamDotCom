@@ -32,24 +32,26 @@ function SearchBar(){
                     <input type="text" 
                     required
                     placeholder="search a recipe..."
-                    value= {query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    name="searchInput"
+                    // value={query}
+                    // onChange={(e) => setQuery(e.target.value)}
                     className={ styles.input }
                     />
 
-                    //This hidden button allows the user to submit query by pressing "Enter"
-                        <button type="submit" style="display: none;"></button>
+                    {/* //This hidden button allows the user to submit query by pressing "Enter" */}
+                        <button type="submit" style={{ display: 'none' }}></button>
                 </form>
 
                 <ul>
-                    {data
+                    {data && Array.isArray(data)
 
-                        //data is left with meals that match the query
-                        .filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
+                        // data is left with meals that match the query
+                        ? data.filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
 
                         .map(item => (
                         <Result key={item.idMeal} item={item}/>
-                    ))}
+                    ))
+                        : null}
                 </ul>
                 {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
             </div>
