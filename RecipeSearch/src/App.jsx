@@ -14,14 +14,11 @@ export default function App() {
 
   return (
     <>
-      <SearchBar/>
       <Routes>
-        <Route>
-          <Route path ="/" element={<Home />} />
-          <Route path="Details/:id" element={<Details />} />
-          <Route path="AboutUs" element={<AboutUs />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="Details/:id" element={<Details />} />
+        <Route path="AboutUs" element={<AboutUs filePath="/AboutUsContent.html"/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
