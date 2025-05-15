@@ -4,7 +4,7 @@ import styles from './SearchBar.module.css';
 import { useState, useEffect } from 'react';
 import "./index.css";
 
-function SearchBar(){
+function SearchBar(){                 
     const [query, setQuery] = useState("");
     const [data, setData] = useState([]);
 
@@ -61,5 +61,3 @@ function SearchBar(){
 }
 
 export default SearchBar;
-
-
