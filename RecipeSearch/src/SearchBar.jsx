@@ -33,8 +33,6 @@ function SearchBar(){
                     required
                     placeholder="search a recipe..."
                     name="searchInput"
-                    // value={query}
-                    // onChange={(e) => setQuery(e.target.value)}
                     className={ styles.input }
                     />
 
@@ -46,7 +44,7 @@ function SearchBar(){
                     {data && Array.isArray(data)
 
                         // data is left with meals that match the query
-                        ? data.filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
+                        //? data.filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
 
                         .map(item => (
                         <Result key={item.idMeal} item={item}/>
