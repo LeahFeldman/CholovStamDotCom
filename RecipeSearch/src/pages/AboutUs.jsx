@@ -1,12 +1,13 @@
 import Title from "../Title";
 import { NavLink } from "react-router-dom";
 import HtmlFromFile from "../HtmlFromFile";
+import styles from "./AboutUs.module.css";
 
 const AboutUs = ({ filePath }) => {
   return (
     <>
       <Title title="About Us"/>
-      <HtmlFromFile filePath={filePath} />
+      <HtmlFromFile class={"container"}filePath={filePath} />
       <NavLink to="/">Go Home</NavLink>
     </>
   
