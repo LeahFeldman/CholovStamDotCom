@@ -12,8 +12,10 @@ function Result({ item }){
     };
 
     return(
-        <div className={styles.resultsContainer}>
-            <button className={styles.resultItem} onClick={handleButton}>{ item.strMeal }</button>
+        <div className={ styles.parent }>
+            <div className={styles.resultsContainer}>
+                <button className={styles.resultItem} onClick={handleButton}>{ item.strMeal }</button>
+            </div>
         </div>
     );
 };

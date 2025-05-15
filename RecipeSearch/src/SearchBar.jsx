@@ -40,7 +40,7 @@ function SearchBar(){
                         <button type="submit" style={{ display: 'none' }}></button>
                 </form>
 
-               <ul className={ styles.parent }>
+               <ul>
                     {Array.isArray(data)
                     ? data.map(item => (
                         <Result key={item.idMeal} item={item} />

@@ -1,7 +1,3 @@
-.parent{
-  position: relative;
-}
-
 .container {
   display: flex;
   justify-content: center;
