@@ -4,9 +4,9 @@ import SearchBar from "../SearchBar";
 export function Home() {
   return (
   <>
-   <Title>Home</Title>
-   <SearchBar />
+   <Title title="Home"/>
    <p>Welcome to the Recipe Search App!</p>
+   <SearchBar />
     <NavLink to = "/AboutUs"> About Us </NavLink>
   </>
   )
