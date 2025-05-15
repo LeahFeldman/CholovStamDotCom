@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import Title from "../Title";
+import SearchBar from "../SearchBar";
 export function Home() {
   return (
   <>
-   <h1>Home</h1>
-    <Link to = "/AboutUs"> About Us </Link>
+   <Title>Home</Title>
+   <SearchBar />
+   <p>Welcome to the Recipe Search App!</p>
+    <NavLink to = "/AboutUs"> About Us </NavLink>
   </>
   )
 };

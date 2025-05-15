@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Title from './Title';
+import Title from '../Title';
+
 
 const Details = () => {
   const { id } =useParams();
@@ -14,7 +15,7 @@ const Details = () => {
       const ingredients = [];
       const measurements = [];
     
-      Object.entries(meal).forEach(([key, value]) => {
+      Object.entries(data.meals[0]).forEach(([key, value]) => {
         if (value && key.startsWith("strIngredient")) {
         ingredients.push(value);
       }
