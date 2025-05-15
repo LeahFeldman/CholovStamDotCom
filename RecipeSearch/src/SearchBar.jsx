@@ -1,10 +1,11 @@
 import React from 'react';
 import Result from './Result';
-import styles from './SearchBar.module.css';
+import searchStyles from './SearchBar.module.css';
+import resultStyles from './Result.module.css';
 import { useState, useEffect } from 'react';
 import "./index.css";
 
-function SearchBar(){
+function SearchBar(){                 
     const [query, setQuery] = useState("");
     const [data, setData] = useState([]);
 
@@ -26,34 +27,27 @@ function SearchBar(){
 
    
     return(
-        <div className={ styles.container }>
-            <div className={ styles.searchBar }>
+        <div className={ searchStyles.container }>
+            <div className={ searchStyles.searchBar }>
                 <form onSubmit={handleSubmit}>
                     <input type="text" 
                     required
                     placeholder="search a recipe..."
                     name="searchInput"
-                    // value={query}
-                    // onChange={(e) => setQuery(e.target.value)}
-                    className={ styles.input }
+                    className={ searchStyles.input }
                     />
 
-                    {/* //This hidden button allows the user to submit query by pressing "Enter" */}
+                    {/*This hidden button allows the user to submit query by pressing "Enter" */}
                         <button type="submit" style={{ display: 'none' }}></button>
                 </form>
 
-                <ul>
-                    {data && Array.isArray(data)
-
-                        // data is left with meals that match the query
-                        ? data.filter(item => item.strMeal.toLowerCase().includes(query.toLowerCase()))
-
-                        .map(item => (
-                        <Result key={item.idMeal} item={item}/>
+                <ul className={ resultStyles.resultsContainer }>
+                    {Array.isArray(data)
+                    ? data.map(item => (
+                        <Result key={item.idMeal} item={item} />
                     ))
-                        : null}
+                    : null}
                 </ul>
-                {/* Navigate to <Details/> page, which will contain details about the recipe.  */}
             </div>
         </div>
 
@@ -61,5 +55,3 @@ function SearchBar(){
 }
 
 export default SearchBar;
-
-
