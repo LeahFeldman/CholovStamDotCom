@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Title from './Title';
+import Title from '../Title';
 
 const Details = () => {
   const { id } = useParams();
