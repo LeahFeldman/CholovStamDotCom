@@ -34,6 +34,7 @@ const Details = () => {
   return (
     <>
       <Title title={meal.strMeal} />
+      <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
       <ul>
         {ingredients.map((item, index) => (
           <li key={index}>{item}</li>
@@ -45,7 +46,5 @@ const Details = () => {
 };
 
 export default Details;
-
-
 
  
