@@ -1,20 +1,24 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './Result.module.css';
 
 
-function Result({ item }){
+function Result({ searchResults }){
 
     const navigate=useNavigate();
 
-    const handleButton = () => {
-        navigate(`/Details/${item.idMeal}`);
-    };
+    if (!searchResults || searchResults.length===0){
+        return <p>No Results Found</p>;
+    }
 
     return(
-        <div className={styles.resultsContainer}>
-            <button className={styles.resultItem} onClick={handleButton}>{ item.strMeal }</button>
-        </div>
+        <ul>
+            {searchResults.map(item => (
+            <li key={item.idMeal}>
+                <Link to={`/Details/${item.idMeal}`} className={styles.resultItem}>{item.strMeal}</Link>
+            </li>
+            ))}
+        </ul>
     );
 };
 

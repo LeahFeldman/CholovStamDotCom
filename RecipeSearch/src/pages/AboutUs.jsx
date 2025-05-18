@@ -1,7 +1,7 @@
 import Title from "../Title";
 import { NavLink } from "react-router-dom";
 import HtmlFromFile from "../HtmlFromFile";
-import styles from "./AboutUs.module.css";
+import styles from "../App.module.css";
 
 const AboutUs = ({ filePath }) => {
   return (
