@@ -6,10 +6,31 @@ import detailsStyles from './Details.module.css';
 
 const Details = () => {
   const { id } = useParams();
+  const { id } = useParams();
   const [meal, setMeal] = useState(null);
   const [ingredients, setIngredients] = useState([]);
 
+  const [ingredients, setIngredients] = useState([]);
+
   useEffect(() => {
+    const fetchMealDetails = async () => {
+      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+      const data = await response.json();
+      const mealData = data.meals[0];
+
+      const combined = [];
+      for (let i = 1; i <= 20; i++) {
+        const ingredient = mealData[`strIngredient${i}`];
+        const measure = mealData[`strMeasure${i}`];
+        if (ingredient && ingredient.trim()) {
+          combined.push(`${measure} ${ingredient}`);
+        }
+      }
+
+      setMeal(mealData);
+      setIngredients(combined);
+    };
+
     const fetchMealDetails = async () => {
       const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
       const data = await response.json();
@@ -50,5 +71,7 @@ const Details = () => {
 };
 
 export default Details;
+
+ 
 
  
