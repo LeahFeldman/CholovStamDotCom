@@ -3,11 +3,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import styles from './Result.module.css';
 
 
-function Result({ searchResults }){
+function Result({ searchResults, hasSearched}){
 
     const navigate=useNavigate();
 
-    if (!searchResults || searchResults.length===0){
+    if (hasSearched && (!searchResults || searchResults.length===0)){
         return <p>No Results Found</p>;
     }
 

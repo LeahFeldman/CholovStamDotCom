@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar({ query, setQuery, setSearchResults }) {
+function SearchBar({ query, setQuery, setSearchResults, setHasSearched }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const inputValue = event.target.elements.searchInput.value;
 
     // Update query state
     setQuery(inputValue);
+    setHasSearched(true);
 
     // Fetch results only on submit
     try {

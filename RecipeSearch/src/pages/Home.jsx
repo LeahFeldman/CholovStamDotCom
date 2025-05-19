@@ -10,6 +10,7 @@ export function Home() {
 
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
   return (
   <>
@@ -17,7 +18,7 @@ export function Home() {
       <NavBar />
       <Title title="Home"/>
       <p>Welcome to the Recipe Search App!</p>
-      <SearchBar query={ query } setQuery={ setQuery } setSearchResults={ setSearchResults }/>
+      <SearchBar query={ query } setQuery={ setQuery } setSearchResults={ setSearchResults } setHasSearched={ setHasSearched }/>
       <Result searchResults={ searchResults }/>
     </div>
     </>
