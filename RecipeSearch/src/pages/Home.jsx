@@ -17,8 +17,7 @@ export function Home() {
     <p>Welcome to the Recipe Search App!</p>
     <SearchBar query={ query } setQuery={ setQuery } setSearchResults={ setSearchResults }/>
     <Result searchResults={ searchResults }/>
-
-      <NavLink to = "/AboutUs"> About Us </NavLink>
+    <NavLink to = "/AboutUs"> About Us </NavLink>
     </div>
     </>
   )

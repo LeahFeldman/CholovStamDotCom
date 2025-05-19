@@ -7,8 +7,8 @@ const AboutUs = ({ filePath }) => {
   return (
     <>
       <Title title="About Us"/>
+      <NavLink to="/">Home</NavLink>
       <HtmlFromFile class={"container"}filePath={filePath} />
-      <NavLink to="/">Go Home</NavLink>
     </>
   
   )

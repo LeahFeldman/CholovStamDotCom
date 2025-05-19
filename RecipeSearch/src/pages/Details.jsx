@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Title from '../Title';
 import layoutStyles from '../App.module.css';
 import detailsStyles from './Details.module.css';
+import NavBar from '../NavBar';
 
 const Details = () => {
   const { id } = useParams();
@@ -38,6 +39,7 @@ const Details = () => {
     <>
       <div className={layoutStyles.container}>
         <Title title={meal.strMeal} />
+        <NavBar />
         <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
         <ul>
           {ingredients.map((item, index) => (
