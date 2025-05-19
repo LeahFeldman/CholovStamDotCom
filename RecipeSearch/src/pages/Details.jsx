@@ -38,8 +38,8 @@ const Details = () => {
   return (
     <>
       <div className={layoutStyles.container}>
-        <Title title={meal.strMeal} />
         <NavBar />
+        <Title title={meal.strMeal} />
         <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
         <ul>
           {ingredients.map((item, index) => (
