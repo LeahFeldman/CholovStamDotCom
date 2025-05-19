@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Title from '../Title';
+import layoutStyles from '../App.module.css';
+import detailsStyles from './Details.module.css';
 
 const Details = () => {
   const { id } = useParams();
@@ -33,14 +35,16 @@ const Details = () => {
 
   return (
     <>
-      <Title title={meal.strMeal} />
-      <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
-      <ul>
-        {ingredients.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      <p>{meal.strInstructions}</p>
+      <div className={layoutStyles.container}>
+        <Title title={meal.strMeal} />
+        <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
+        <ul>
+          {ingredients.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <p>{meal.strInstructions}</p>
+      </div>
     </>
   );
 };
