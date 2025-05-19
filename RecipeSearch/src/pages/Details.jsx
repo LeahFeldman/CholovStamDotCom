@@ -4,6 +4,7 @@ import Title from '../Title';
 import layoutStyles from '../App.module.css';
 import detailsStyles from './Details.module.css';
 import NavBar from '../NavBar';
+import { BackButton } from './BackButton';
 
 const Details = () => {
   const { id } = useParams();
@@ -39,6 +40,7 @@ const Details = () => {
     <>
       <div className={layoutStyles.container}>
         <NavBar />
+        <BackButton />
         <Title title={meal.strMeal} />
         <img src={ meal.strMealThumb } alt= {meal.strMeal }/>
         <ul>
