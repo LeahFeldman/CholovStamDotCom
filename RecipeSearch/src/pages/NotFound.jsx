@@ -4,8 +4,8 @@ import NavBar from '../NavBar';
 const NotFound = () => {
   return (
     <>
-      <Title title="Page Not Found"/>
       <NavBar />
+      <Title title="Page Not Found"/>
     </>
   
   )
