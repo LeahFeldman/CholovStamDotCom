@@ -19,7 +19,7 @@ export function Home() {
       <Title title="Home"/>
       <p>Welcome to the Recipe Search App!</p>
       <SearchBar query={ query } setQuery={ setQuery } setSearchResults={ setSearchResults } setHasSearched={ setHasSearched }/>
-      <Result searchResults={ searchResults }/>
+      <Result searchResults={ searchResults } hasSearched={ hasSearched }/>
     </div>
     </>
   )

@@ -7,7 +7,7 @@ function Result({ searchResults, hasSearched}){
 
     const navigate=useNavigate();
 
-    if (hasSearched && (!searchResults || searchResults.length===0)){
+    if (hasSearched && (!searchResults || searchResults.length === 0)){
         return <p>No Results Found</p>;
     }
 
